@@ -46,7 +46,11 @@ RUN apk add --no-cache=true --update \
                                 util-linux \
                                 wget \
                                 zip \
-                                zlib-dev
+                                zlib-dev \
+                                tar \
+                                coreutils \
+                                grep \
+                                curl
 
 RUN python3 -m ensurepip \
     && pip3 install --upgrade pip setuptools \
