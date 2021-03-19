@@ -32,6 +32,7 @@ RUN apk add --no-cache=true --update \
                                 musl \
                                 neofetch \
                                 nodejs \
+                                npm \
                                 openssl \
                                 openssl-dev \
                                 postgresql \
@@ -62,6 +63,9 @@ RUN python3 -m ensurepip \
 
 ADD https://raw.githubusercontent.com/ElytrA8/ProjectFizilion/dragon/requirements.txt requirements.txt
 RUN pip install -r requirements.txt
+
+#wikit
+RUN npm install wikit -g
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 CMD ["python3"]
