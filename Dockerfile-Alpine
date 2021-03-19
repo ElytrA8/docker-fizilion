@@ -62,7 +62,8 @@ RUN python3 -m ensurepip \
     rm -r /root/.cache
 
 ADD https://raw.githubusercontent.com/ElytrA8/ProjectFizilion/dragon/requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install -U pip
+RUN pip install -U -r requirements.txt
 
 #wikit
 RUN npm install wikit -g
