@@ -15,8 +15,8 @@ RUN dnf -y install \
 
 #pip
 ADD https://raw.githubusercontent.com/FrosT2k5/ProjectFizilion/dragon/requirements.txt requirements.txt	\
-&& pip3 install -U pip
-&& pip3 install -U --no-cache-dir -r requirements.txt	
+&& pip3 install -U pip \
+&& pip3 install -U --no-cache-dir -r requirements.txt \
 && rm -rf requirements.txt
 
 #finalization
