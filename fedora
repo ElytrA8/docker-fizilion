@@ -17,8 +17,8 @@ ADD https://raw.githubusercontent.com/FrosT2k5/ProjectFizilion/dragon/requiremen
 RUN pip3 install -U pip setuptools wheel && pip3 install --no-cache-dir -r requirements.txt && rm requirements.txt
 
 #chromedriver
-RUN curl https://chromedriver.storage.googleapis.com/90.0.4430.24/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && rm chromedriver_linux64.zip && \
-mv chromedriver chromedriver /usr/bin/chromedriver && chown root:root /usr/bin/chromedriver && chmod +x /usr/bin/chromedriver
+RUN curl https://chromedriver.storage.googleapis.com/90.0.4430.24/chromedriver_linux64.zip -o chromedriver.zip && unzip chromedriver.zip && rm chromedriver.zip && \
+mv chromedriver /usr/bin/chromedriver && chown root:root /usr/bin/chromedriver && chmod +x /usr/bin/chromedriver
 
 #finalization
 CMD ["python3"]
