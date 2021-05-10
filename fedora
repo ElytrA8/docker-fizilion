@@ -2,7 +2,7 @@
 FROM fedora:34
 
 #maintainer 
-LABEL maintainer=ElytrA8 <manofuranium@gmail.com>
+LABEL maintainer="Shéikh Adnan <manofuranium@gmail.com>"
 
 #packages list update
 RUN dnf -y update
