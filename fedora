@@ -1,6 +1,9 @@
 #base image
 FROM fedora:34
 
+#maintainer 
+LABEL maintainer=ElytrA8 <manofuranium@gmail.com>
+
 #packages list update
 RUN dnf -y update
 RUN dnf -y install \
