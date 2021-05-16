@@ -7,13 +7,13 @@ LABEL maintainer="Shéikh Adnan <manofuranium@gmail.com>"
 #packages list update
 RUN dnf -y update
 RUN dnf -y install \
-    curl git openssl postgresql postgresql-devel python3 python3-pip python3-devel unrar sqlite tar neofetch wget xz zip \
+    curl git openssl postgresql postgresql-devel python3 python3-pip python3-devel sqlite tar neofetch wget xz zip \
     aria2 chromium chromedriver figlet gcc gzip
 
 #fusion
 RUN dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
 && dnf -y install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm \
-&& dnf -y install ffmpeg
+&& dnf -y install ffmpeg unrar
 
 #pip3
 ADD https://raw.githubusercontent.com/FrosT2k5/ProjectFizilion/dragon/requirements.txt requirements.txt 
