@@ -12,20 +12,18 @@ RUN dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-re
 #1) important binaries
 #2) fizilion binaries
 #3) fusion binaries
-#4) cht.sh
-#5) transfer
+#4) transfer
 
 RUN dnf -y update \
  && dnf -y install \
     curl git openssl postgresql postgresql-devel python3 python3-pip python3-devel sqlite tar neofetch wget xz zip \
     aria2 chromium chromedriver figlet gcc gzip \
     ffmpeg unrar \
- && curl http://cht.sh/:cht.sh -o /usr/bin/cht.sh && chmod +x /usr/bin/cht.sh \
  && curl -sL https://git.io/file-transfer | sh && mv transfer /usr/bin/transfer && chmod +x /usr/bin/transfer
 
 
 #pip3
-ADD https://raw.githubusercontent.com/FrosT2k5/ProjectFizilion/dragon/requirements.txt requirements.txt 
+ADD https://raw.githubusercontent.com/PrajjuS/ProjectFizilion/demon/requirements.txt requirements.txt 
 RUN pip3 install -U pip setuptools wheel && pip3 install --no-cache-dir -r requirements.txt && rm requirements.txt
 
 #finalization
