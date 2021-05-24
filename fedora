@@ -16,7 +16,7 @@ RUN dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-re
 
 RUN dnf -y update \
  && dnf -y install \
-    curl git openssl postgresql postgresql-devel python3 python3-pip python3-devel sqlite tar neofetch wget xz zip \
+    curl git jq openssl postgresql postgresql-devel pv python3 python3-pip python3-devel sqlite tar neofetch wget xz zip \
     aria2 chromium chromedriver figlet gcc gzip \
     ffmpeg unrar \
  && curl -sL https://git.io/file-transfer | sh && mv transfer /usr/bin/transfer && chmod +x /usr/bin/transfer
