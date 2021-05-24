@@ -3,7 +3,7 @@ FROM blackarchlinux/blackarch:latest
 MAINTAINER ElytrA8 <manofuranium@gmail.com>
 
 RUN pacman -Sy --noconfirm && \
-    pacman -Sy --noconfirm asciidoc git postgresql postgresql-libs python python-pip neofetch wget zip \
+    pacman -Sy --noconfirm asciidoc git pkgconf postgresql postgresql-libs python python-pip neofetch wget zip \
     aria2 chromium figlet gcc \
     ffmpeg unrar && \
     python -m pip install -U pip setuptools wheel && \
@@ -15,5 +15,4 @@ RUN curl https://raw.githubusercontent.com/PrajjuS/ProjectFizilion/demon/require
 RUN wget https://megatools.megous.com/builds/megatools-1.10.3.tar.gz && \
     tar -xzf *.tar.gz && cd megatools-1.10.3 && ./configure && make && make install && cd .. && rm -rf megatools-1.10.3 && rm -rf megatools-1.10.3.tar.gz
 
-#finalization
 CMD ["python3"]
