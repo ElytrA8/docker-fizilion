@@ -4,7 +4,7 @@ MAINTAINER ElytrA8 <manofuranium@gmail.com>
 
 RUN pacman -Sy --noconfirm && \
     pacman -Sy --noconfirm asciidoc git postgresql postgresql-libs python python-pip neofetch wget zip \
-    aria2 chromium figlet gcc gzip \
+    aria2 chromium figlet gcc \
     ffmpeg unrar && \
     python -m pip install -U pip setuptools wheel && \
     curl -sL https://git.io/file-transfer | sh && mv transfer /usr/bin/transfer && chmod +x /usr/bin/transfer
