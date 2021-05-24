@@ -1,0 +1,21 @@
+FROM blackarchlinux/blackarch:latest
+
+MAINTAINER ElytrA8 <manofuranium@gmail.com>
+
+RUN pacman -Syu --noconfirm && \
+    pacman -Sy --noconfirm curl git openssl postgresql postgresql-libs python python-pip python3-devel sqlite tar neofetch wget xz zip \
+    aria2 chromium chromedriver figlet gcc gzip \
+    ffmpeg unrar && \
+    python -m pip install -U pip setuptools wheel && \
+    curl -sL https://git.io/file-transfer | sh && mv transfer /usr/bin/transfer && chmod +x /usr/bin/transfer
+                
+
+RUN curl https://raw.githubusercontent.com/PrajjuS/ProjectFizilion/demon/requirements.txt -o requirements.txt && \
+    pip3 install -U pip setuptools wheel && pip3 install --no-cache-dir -r requirements.txt && rm requirements.txt
+
+
+RUN wget https://megatools.megous.com/builds/megatools-1.10.3.tar.gz && \
+    tar -xzf *.tar.gz && cd megatools-1.10.3 && ./configure && make && make install && cd .. && rm -rf megatools-1.10.3 && rm -rf megatools-1.10.3.tar.gz
+
+#finalization
+CMD ["python3"]
