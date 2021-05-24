@@ -1,5 +1,5 @@
 #base image
-FROM fedora:34
+FROM fedora:35
 
 #maintainer 
 LABEL maintainer="Shéikh Adnan <manofuranium@gmail.com>"
