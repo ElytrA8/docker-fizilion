@@ -2,8 +2,8 @@ FROM blackarchlinux/blackarch:latest
 
 MAINTAINER ElytrA8 <manofuranium@gmail.com>
 
-RUN pacman -Syu --noconfirm && \
-    pacman -Sy --noconfirm curl git openssl postgresql postgresql-libs python python-pip python3-devel sqlite tar neofetch wget xz zip \
+RUN pacman -Sy --noconfirm && \
+    pacman -Sy --noconfirm base-devel git postgresql postgresql-libs python python-pip neofetch wget zip \
     aria2 chromium chromedriver figlet gcc gzip \
     ffmpeg unrar && \
     python -m pip install -U pip setuptools wheel && \
